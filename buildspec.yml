@@ -3,14 +3,15 @@ version: 0.2
 phases:
   install:
     on-failure: ABORT
+    runtime-versions:
+      nodejs: 20
     commands:
-      - if [ -e /tmp/node_modules.tar ]; then tar xf /tmp/node_modules.tar; fi
       - npm install
 
   pre_build:
     on-failure: ABORT
     commands:
-      - npm run test
+      - node -v
 
   build:
     on-failure: ABORT
@@ -21,7 +22,3 @@ artifacts:
   files:
     - '**/*'
   base-directory: dist
-
-cache:
-  paths:
-    - /tmp/node_modules.tar
