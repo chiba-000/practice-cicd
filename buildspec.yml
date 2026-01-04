@@ -6,6 +6,7 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
+      - cd vite-project
       - npm install
 
   pre_build:
@@ -16,9 +17,10 @@ phases:
   build:
     on-failure: ABORT
     commands:
+      - cd vite-project
       - npm run build
 
 artifacts:
   files:
     - '**/*'
-  base-directory: dist
+  base-directory: vite-project/dist
