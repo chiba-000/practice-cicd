@@ -7,7 +7,6 @@ phases:
     commands:
       - echo "Checking inside vite-project..."
       - ls -la vite-project
-      - cd vite-project
       - echo "Installing dependencies..."
       - npm install
   
@@ -18,5 +17,4 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: vite-project/dist
+    - 'dist/**/*'
