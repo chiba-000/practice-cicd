@@ -8,13 +8,14 @@ phases:
       - echo "Checking inside vite-project..."
       - ls -la vite-project
       - echo "Installing dependencies..."
-      - npm install
+      - cd vite-project && npm install
   
   build:
     commands:
       - echo "Building..."
-      - npm run build
+      - cd vite-project && npm run build
 
 artifacts:
+  base-directory: vite-project/dist
   files:
-    - 'dist/**/*'
+    - '**/*'
