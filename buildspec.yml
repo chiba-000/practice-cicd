@@ -2,26 +2,19 @@ version: 0.2
 
 phases:
   install:
-    on-failure: ABORT
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "=== 現場検証スタート ==="
-      - pwd
-      - ls -la
-      - echo "=== 現場検証エンド ==="
+      - echo "Checking inside vite-project..."
+      - ls -la vite-project
       - cd vite-project
+      - echo "Installing dependencies..."
       - npm install
-
-  pre_build:
-    on-failure: ABORT
-    commands:
-      - node -v
-
+  
   build:
-    on-failure: ABORT
     commands:
-      - cd vite-project
+      - cd vite-project     
+      - echo "Building..."
       - npm run build
 
 artifacts:
