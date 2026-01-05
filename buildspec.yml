@@ -13,7 +13,6 @@ phases:
   
   build:
     commands:
-      - cd vite-project     
       - echo "Building..."
       - npm run build
 
