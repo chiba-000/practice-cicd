@@ -6,6 +6,10 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
+      - echo "=== 現場検証スタート ==="
+      - pwd
+      - ls -la
+      - echo "=== 現場検証エンド ==="
       - cd vite-project
       - npm install
 
